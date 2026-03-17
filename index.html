@@ -930,7 +930,7 @@
         const CONFIG = {
             negocio: "El Toscano",
             whatsapp: "573168988827",
-            sedes: ["Sede Principal"],
+            sedes: ["La sombrilla","Lomas de Granada", "Obando"],
             metodosPago: ["💳 Nequi", "💵 Efectivo", "🔑 Bre-B"],
             horario: { abre: 11, cierra: 22 }
         };
@@ -1316,7 +1316,7 @@
 
             html += `<div class="form-group">`;
             html += `<label class="form-label">📝 ¿Alguna solicitud especial? <span style="font-weight:400;color:var(--color-gris-claro)">(opcional)</span></label>`;
-            html += `<textarea class="form-input" id="formObservaciones" placeholder="Ej: sin ají, salsa aparte, bien cocido..." rows="2" style="resize:none" onchange="actualizarFormulario('observaciones', this.value)">${formularioDatos.observaciones}</textarea>`;
+            html += `<textarea class="form-input" id="formObservaciones" placeholder="Ej: Todas las salsas, sólo ajo, llamar cuando esté afuera" rows="2" style="resize:none" onchange="actualizarFormulario('observaciones', this.value)">${formularioDatos.observaciones}</textarea>`;
             html += `</div>`;
             html += `</div>`;
 
@@ -1440,7 +1440,7 @@
                 mensaje += `- ${item.cantidad}x ${item.nombre}: ${formatearPrecio(item.precio * item.cantidad)}\n`;
             });
 
-            mensaje += `\n💰 *Total: ${formatearPrecio(total)}*`;
+            mensaje += `\n💰 *Total(sin domicilio): ${formatearPrecio(total)}*`;
 
             if (formularioDatos.observaciones && formularioDatos.observaciones.trim()) {
                 mensaje += `\n📝 *Observaciones:* ${formularioDatos.observaciones}`;
