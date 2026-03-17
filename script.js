@@ -485,6 +485,7 @@ function enviarPedidoWhatsApp() {
 
     if (!estaAbierto()) {
         intentarEnviarCerrado = true;
+        cerrarCarrito();
         modalCerrado.classList.add("visible");
         return;
     }
@@ -549,6 +550,7 @@ btnPedir.addEventListener("click", enviarPedidoWhatsApp);
 modalCancelar.addEventListener("click", () => {
     intentarEnviarCerrado = false;
     modalCerrado.classList.remove("visible");
+    abrirCarrito();
 });
 modalConfirmar.addEventListener("click", () => {
     modalCerrado.classList.remove("visible");
@@ -564,3 +566,11 @@ document.addEventListener("DOMContentLoaded", () => {
     actualizarEstadoHorario();
     setInterval(actualizarEstadoHorario, 60000); // Actualizar cada minuto
 });
+
+function volverMenu(){
+
+    cerrarCarrito();
+
+    window.scrollTo({ top:0, behavior:"smooth" });
+
+}
